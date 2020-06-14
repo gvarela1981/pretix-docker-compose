@@ -4,6 +4,7 @@ services:
     # Handle install-time config
     image: alpine
     container_name: pre-config
+    entrypoint: wget https://raw.githubusercontent.com/gvarela1981/pretix-docker-compose/master/etc/pretix.cfg -O cfg/pretix.cfg
     volumes: 
       - cfg
 
@@ -24,7 +25,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - cfg:/etc/pretix/pretix.cfg
+      - cfg:/etc/pretix/
       - data:/data
       - src:/pretix/src
     networks:
