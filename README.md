@@ -2,8 +2,36 @@
 
 ### Start it up
 
-* `cp ./etc/pretix.cfg.template ./etc/pretix.cfg` # Fill in the blanks
+* update your config file at ./etc/pretix.cfg
 * `docker-compose up` to run development environment 
+
+### Modifications to parent repo
+
+* We create ./etc/pretix.cfg so you can test pretix out of the box
+* We set django debuf to false at ./etc/pretix.cfg to avoid css erros 
+
+### Tested menus
+
+Admin session
+
+* Dashboard
+* Events
+* Organizers
+* Create new organizer
+* Order search
+* User settings
+* Create user
+* Global settings
+
+Organizer session
+
+* Events
+* Settings
+* Teams
+* Create new team
+* Devices
+* Gift Cards
+* Webhooks
 
 ### Helper commands
 
