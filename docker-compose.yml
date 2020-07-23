@@ -26,7 +26,7 @@ services:
       - backend
 
   pretix:
-    image: pretix/standalone:stable
+    build: .
     container_name: pretix
     depends_on:
       - database
@@ -52,12 +52,6 @@ volumes:
       type: 'none'
       o: 'bind'
       device: ${PWD}/rootfs/postgres
-  src:
-    driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: ${PWD}/rootfs/src
 
 networks:
   backend:
