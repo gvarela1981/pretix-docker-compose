@@ -1,5 +1,7 @@
 FROM pretix/standalone:stable
 USER root
+RUN export PYTHONPATH=$PYTHONPATH:/pretix/src && pip3 install pretix-pages
+RUN export PYTHONPATH=$PYTHONPATH:/pretix/src && pip3 install prtx-faq
 RUN export PYTHONPATH=$PYTHONPATH:/pretix/src && pip3 install mercadopago
 USER pretixuser
 COPY ./plugins/mercadopago/setup.py /pretix/src/pretix/plugins/setup.py
